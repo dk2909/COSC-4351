@@ -1,0 +1,119 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false}
+  server_config: {user_table: 52069}
+startup: {type: form, module: LoginForm}
+package_name: ecom_site
+allow_embedding: false
+name: Working 4-24
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+startup_form: Checkout
+native_deps: {head_html: ''}
+db_schema:
+- name: Shipping Address
+  id: 52004
+  python_name: shipping_address
+  columns:
+    1yEoX4tfMaE=:
+      name: Street Address
+      type: string
+      admin_ui: {order: 0, width: 200}
+    JpEzCqjY9q8=:
+      name: Zip
+      type: string
+      admin_ui: {order: 3, width: 200}
+    ZKxovaau8mo=:
+      name: created
+      type: datetime
+      admin_ui: {order: 6, width: 200}
+    jFcUHyI2lxo=:
+      name: OrderNumber
+      type: number
+      admin_ui: {order: 5, width: 200}
+    pFlJ_FJAS84=:
+      name: City
+      type: string
+      admin_ui: {order: 1, width: 200}
+    ux2MT+qTi8Q=:
+      name: UserEmail
+      type: string
+      admin_ui: {order: 4, width: 200}
+    yY5c9R0z_M0=:
+      name: State
+      type: string
+      admin_ui: {order: 2, width: 200}
+  access: {python_name: shipping_address, app_id: GDOW43PA5AGG7S7M, server: full,
+    client: search, table_id: 52004}
+- name: Order
+  id: 52003
+  python_name: order
+  columns:
+    1yiYMMHiieA=:
+      name: Item
+      type: string
+      admin_ui: {order: 1, width: 347}
+    XEnw1J4MLPo=:
+      name: UserEmail
+      type: string
+      admin_ui: {order: 9, width: 200}
+    ieeLmdGem8A=:
+      name: OrderNumber
+      type: number
+      admin_ui: {order: 3, width: 200}
+    ongSo6Wau0w=:
+      name: Cost
+      type: number
+      admin_ui: {order: 2, width: 200}
+  access: {python_name: order, app_id: GDOW43PA5AGG7S7M, server: full, client: full,
+    table_id: 52003}
+- name: Users
+  id: 52002
+  python_name: users
+  columns:
+    06_M+thz9lk=:
+      name: last_login
+      type: datetime
+      admin_ui: {order: 4, width: 200}
+    TWiwg0XrhVQ=:
+      name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 100}
+    X4Oy+UPMFe8=:
+      name: signed_up
+      type: datetime
+      admin_ui: {order: 2, width: 200}
+    m23Cx_nrgFQ=:
+      name: password_hash
+      type: string
+      admin_ui: {order: 3, width: 200}
+    zPSi6O0NGcU=:
+      name: email
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: users, app_id: GDOW43PA5AGG7S7M, server: full, client: none,
+    table_id: 52002}
+- name: Inventory
+  id: 52001
+  python_name: inventory
+  columns:
+    0sLt8pJygME=:
+      name: Cost
+      type: number
+      admin_ui: {order: 2, width: 200}
+    OiOMsW_TUQE=:
+      name: Item
+      type: string
+      admin_ui: {order: 0, width: 200}
+    bq2pNnZZo8M=:
+      name: Image
+      type: media
+      admin_ui: {order: 4, width: 200}
+  access: {python_name: inventory, app_id: GDOW43PA5AGG7S7M, server: full, client: full,
+    table_id: 52001}
+renamed: true

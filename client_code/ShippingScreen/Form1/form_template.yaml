@@ -1,0 +1,57 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{"XTPVAG":15,"DNPASW":45,"FZBFTS":15,"DPDKAB":45,"MPQFHV":15,"BJSJDX":45,"MFBMWB":15,"WHFPOC":45}'}
+components:
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Street Address, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'FRCTWV,MFBMWB'}
+- type: TextBox
+  properties: {}
+  name: text_box_1
+  layout_properties: {grid_position: 'FRCTWV,WHFPOC'}
+  data_bindings:
+  - {property: text, code: 'self.item[''Street Address'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: City, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'XEZEAX,MPQFHV'}
+- type: TextBox
+  properties: {}
+  name: text_box_2
+  layout_properties: {grid_position: 'XEZEAX,BJSJDX'}
+  data_bindings:
+  - {property: text, code: 'self.item[''City'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: State, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'IGOPGO,FZBFTS'}
+- type: TextBox
+  properties: {}
+  name: text_box_4
+  layout_properties: {grid_position: 'IGOPGO,DPDKAB'}
+  data_bindings:
+  - {property: text, code: 'self.item[''State'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Zip, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_4
+  layout_properties: {grid_position: 'PJGNMR,XTPVAG'}
+- type: TextBox
+  properties: {}
+  name: text_box_3
+  layout_properties: {grid_position: 'PJGNMR,DNPASW'}
+  data_bindings:
+  - {property: text, code: 'self.item[''Zip'']', writeback: true}
+is_package: true

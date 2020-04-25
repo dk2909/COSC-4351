@@ -1,0 +1,127 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:dashboard.html'}
+components:
+- type: ColumnPanel
+  properties: {role: card, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"AXBANR":10,"JZXFAH":50}',
+    spacing_below: small, background: ''}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'FQOXWB,AXBANR'}
+    components:
+    - type: Label
+      properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Cart:', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'EWEHYD,QCXMMV'}
+  - type: ColumnPanel
+    properties: {col_widths: '{"IOROWR":30,"UPMSYT":20}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'FQOXWB,JZXFAH'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Product, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'KBWNYI,IOROWR'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Price, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'KBWNYI,UPMSYT'}
+    - type: ColumnPanel
+      properties: {col_widths: '{"HYWPQQ":30,"PUSBER":20}'}
+      name: column_panel_3
+      layout_properties: {grid_position: 'FPFIKL,QJDXNR'}
+      components:
+      - type: RepeatingPanel
+        properties: {item_template: Checkout.ItemLabel}
+        name: repeating_panel_2
+        layout_properties: {grid_position: 'TURTQD,HYWPQQ'}
+      - type: ColumnPanel
+        properties: {col_widths: '{}'}
+        name: column_panel_5
+        layout_properties: {grid_position: 'TURTQD,PUSBER'}
+        components:
+        - type: RepeatingPanel
+          properties: {item_template: Checkout.CostLabel}
+          name: repeating_panel_1
+          layout_properties: {grid_position: 'KXEKRJ,NGIDHR'}
+    - type: ColumnPanel
+      properties: {col_widths: '{}'}
+      name: column_panel_7
+      layout_properties: {grid_position: 'LJPUCX,VFNXCM'}
+      components:
+      - type: Label
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+          visible: true, text: 'Order Total:', font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_6
+        layout_properties: {grid_position: 'QKWYCF,ERGRWO'}
+      - type: ColumnPanel
+        properties: {col_widths: '{}'}
+        name: column_panel_8
+        layout_properties: {grid_position: 'QKWYCF,UJIDXZ'}
+        components:
+        - type: Label
+          properties: {}
+          name: label_7
+          layout_properties: {grid_position: 'FHXPWH,IVAHQN'}
+          data_bindings:
+          - {property: text, code: 'self.item[''TotalSum'',2]'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_4
+    layout_properties: {grid_position: 'EIKYIE,LMAJUF'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Click ''Next'' to enter shipping address:', font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'TWPLQX,CZYLEF'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Next, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: button_1
+      layout_properties: {grid_position: 'TWPLQX,VKIDAV'}
+      event_bindings: {click: button_1_click}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Checkout, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: checkout
+  layout_properties: {slot: title}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Home, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: home
+  layout_properties: {slot: nav-right}
+  event_bindings: {click: home_click}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Account, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: account
+  layout_properties: {slot: nav-right}
+  event_bindings: {click: account_click}
